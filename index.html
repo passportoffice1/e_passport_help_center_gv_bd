@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d6b43">
+
+<!-- =====================================================
+     সব পরিবর্তনের জায়গা চিহ্নিত আছে: [১] [২] [৩] [৪] [৫] [৬]
+     ===================================================== -->
+
+<!-- [৪] ব্রাউজার ট্যাবের নাম ও সার্চের বিবরণ -->
+<title>পাসপোর্ট সেবা কেন্দ্র সৌদি আরব</title>
+<meta name="description" content="সৌদি আরবে বাংলাদেশি প্রবাসীদের পাসপোর্ট-সংক্রান্ত তথ্য ও সহায়তার জন্য যোগাযোগ করুন। এটি সরকারি দূতাবাস বা কনসুলেটের ওয়েবসাইট নয়।">
+
+<!-- ============ লিংক প্রিভিউ (Facebook, Messenger, WhatsApp, imo ইত্যাদি) ============ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="bn_BD">
+<meta property="og:site_name" content="পাসপোর্ট সেবা কেন্দ্র সৌদি আরব">
+
+<!-- [৫] ওয়েবসাইটের সম্পূর্ণ লিংক (https:// সহ) -->
+<meta property="og:url" content="https://passportoffice1.github.io/e_passport_help_center_gv_bd/">
+
+<!-- [৪] প্রিভিউয়ের শিরোনাম (ছোট রাখুন) ও বিবরণ (১-২ লাইন) -->
+<meta property="og:title" content="পাসপোর্ট সেবা কেন্দ্র সৌদি আরব">
+<meta property="og:description" content="পাসপোর্ট-সংক্রান্ত সহায়তার জন্য মেসেজ করুন। এটি সরকারি দূতাবাস বা কনসুলেটের ওয়েবসাইট নয়; সমাধানের সময় নিশ্চিত নয়।">
+
+<!-- [৩] প্রিভিউয়ের ছবির লিংক (https:// দিয়ে পুরো লিংক) -->
+<meta property="og:image" content="https://raw.githubusercontent.com/passportoffice1/e_passport_help_center_gv_bd/main/IMG_20261014_103124_751.png">
+<meta property="og:image:alt" content="পাসপোর্ট সেবা কেন্দ্র সৌদি আরবের শেয়ার প্রিভিউ ছবি">
+
+<!-- Twitter/X কার্ড: ছোট ছবির জন্য "summary", বড় ছবির জন্য "summary_large_image" -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="পাসপোর্ট সেবা কেন্দ্র সৌদি আরব">
+<meta name="twitter:description" content="পাসপোর্ট-সংক্রান্ত সহায়তার জন্য মেসেজ করুন। এটি সরকারি দূতাবাস বা কনসুলেটের ওয়েবসাইট নয়; সমাধানের সময় নিশ্চিত নয়।">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/passportoffice1/e_passport_help_center_gv_bd/main/IMG_20261014_103124_751.png">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: "Noto Sans Bengali", "Segoe UI", Arial, sans-serif;
+  background: #eef3f0;
+  color: #12352a;
+  padding:
+    max(16px, env(safe-area-inset-top))
+    max(14px, env(safe-area-inset-right))
+    max(16px, env(safe-area-inset-bottom))
+    max(14px, env(safe-area-inset-left));
+  display: flex;
+  justify-content: center;
+}
+
+/* ================= হোম পেজ ================= */
+.page { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 16px; }
+
+.poster { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 24px rgba(18,53,42,.12); }
+.poster img { display: block; width: 100%; height: auto; }
+
+.next {
+  display: block; width: 100%; padding: 14px 20px; border: none; border-radius: 12px;
+  background: #0d6b43; color: #fff; text-align: center;
+  font-family: inherit; font-size: 18px; font-weight: 700; cursor: pointer;
+}
+.next:active { background: #0a5636; }
+.next:focus-visible, .popup-btn:focus-visible, .popup-close:focus-visible { outline: 3px solid #f2b705; outline-offset: 3px; }
+
+/* ================= পপআপ ================= */
+.overlay {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+           max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  background: rgba(10, 25, 20, .45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.overlay[hidden] { display: none; }
+
+.popup {
+  position: relative; width: 100%; max-width: 380px;
+  max-height: 100%; overflow-y: auto;
+  background: #fff; border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.3);
+  animation: pop .25s ease-out;
+}
+@keyframes pop { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .popup { animation: none; } }
+
+.popup-img { display: block; width: 100%; height: auto; max-height: 38vh; object-fit: cover; }
+
+.popup-body { padding: 18px 18px 20px; text-align: center; }
+.popup-body h2 { font-size: 21px; line-height: 1.35; margin-bottom: 8px; color: #0b3b27; }
+.popup-body p  { font-size: 15.5px; line-height: 1.5; color: #3d5a4d; margin-bottom: 16px; }
+
+.popup-btn {
+  display: block; width: 100%; padding: 13px 18px; border-radius: 12px;
+  background: #0b84ff; color: #fff; text-decoration: none;
+  font-size: 17px; font-weight: 700; text-align: center;
+}
+
+.popup-close {
+  position: absolute; top: 8px; right: 8px; width: 34px; height: 34px;
+  border: none; border-radius: 50%;
+  background: rgba(0,0,0,.55); color: #fff; font-size: 20px; line-height: 1; cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- ================= হোম পেজ ================= -->
+<main class="page">
+
+  <!-- [১] হোম পেজের ছবির লিংক -->
+  <div class="poster">
+    <img src="https://raw.githubusercontent.com/passportoffice1/e_passport_help_center_gv_bd/main/1791952991346.jpg" alt="পাসপোর্ট সেবা কেন্দ্র সৌদি আরব">
+  </div>
+
+  <!-- এই বাটনে ক্লিক করলে পপআপ খুলবে -->
+  <button class="next" id="open-popup" type="button">পরের পেজে যান</button>
+</main>
+
+<!-- ================= পপআপ (শুরুতে লুকানো) ================= -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title" hidden>
+  <div class="popup">
+    <button class="popup-close" id="popup-close" type="button" aria-label="বন্ধ করুন">&times;</button>
+
+    <!-- [২] পপআপের ছবির লিংক -->
+    <img class="popup-img" src="https://raw.githubusercontent.com/passportoffice1/e_passport_help_center_gv_bd/main/IMG_20261013_182826_569.jpg" alt="পাসপোর্ট-সংক্রান্ত সহায়তা">
+
+    <div class="popup-body">
+      <!-- [৪] পপআপের হেডলাইন ও দুই লাইন লেখা -->
+      <h2 id="popup-title">পাসপোর্ট-সংক্রান্ত সহায়তা কেন্দ্র</h2>
+      <p>সৌদি আরবে বাংলাদেশি প্রবাসীদের পাসপোর্টের সমস্যা জানাতে সরাসরি মেসেজ পাঠান।<br>সমাধানের সময় পরিস্থিতি ও সংশ্লিষ্ট কর্তৃপক্ষের ওপর নির্ভরশীল; ২৪–৭২ ঘণ্টায় সমাধান নিশ্চিত নয়।</p>
+
+      <!-- [৬] মেসেঞ্জার লিংক: https://m.me/আপনার_পেজের_ইউজারনেম -->
+      <a class="popup-btn" href="https://m.me/passportchaking1">মেসেঞ্জারে মেসেজ করুন</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  var overlay = document.getElementById('overlay');
+  var openBtn = document.getElementById('open-popup');
+
+  function openPopup()  { overlay.hidden = false; document.getElementById('popup-close').focus(); }
+  function closePopup() { overlay.hidden = true;  openBtn.focus(); }
+
+  openBtn.addEventListener('click', openPopup);
+  document.getElementById('popup-close').addEventListener('click', closePopup);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !overlay.hidden) closePopup(); });
+</script>
+
+</body>
+</html>
